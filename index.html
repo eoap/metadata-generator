@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CWL Metadata Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>CWL Metadata Generator</h1>
+    <p>Generate a <code>schema.org/SoftwareApplication</code> JSON-LD metadata file for your CWL CommandLineTool or Workflow.</p>
+
+    <form id="metadata-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="My Tool" required>
+
+      <label for="version">Version</label>
+      <input type="text" id="version" placeholder="1.0.0">
+
+      <label for="language">Programming Language</label>
+      <input type="text" id="language" placeholder="Python">
+
+      <label for="command">Base Command</label>
+      <input type="text" id="command" placeholder="process.py">
+
+      <label for="inputs">Number of Inputs</label>
+      <input type="number" id="inputs" placeholder="2">
+
+      <label for="outputs">Number of Outputs</label>
+      <input type="number" id="outputs" placeholder="1">
+
+      <label for="repo">Code Repository URL</label>
+      <input type="url" id="repo" placeholder="https://github.com/user/tool">
+
+      <label for="license">License (SPDX URL)</label>
+      <input type="url" id="license" placeholder="https://spdx.org/licenses/MIT">
+
+      <button type="button" onclick="generateMetadata()">Generate</button>
+      <button type="button" onclick="downloadMetadata()">Download JSON</button>
+    </form>
+
+    <h2>Generated JSON-LD</h2>
+    <textarea id="output" rows="20" cols="80" readonly></textarea>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
